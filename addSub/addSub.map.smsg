@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at addSub.v(4): object "x" differs only in case from object "X" in the same scope
+Info (10281): Verilog HDL Declaration information at addSub.v(4): object "y" differs only in case from object "Y" in the same scope

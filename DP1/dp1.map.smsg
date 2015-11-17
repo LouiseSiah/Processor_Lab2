@@ -1,0 +1,4 @@
+Info (10281): Verilog HDL Declaration information at dp1.v(5): object "Address" differs only in case from object "address" in the same scope
+Info (10281): Verilog HDL Declaration information at dp1.v(5): object "OutIncre" differs only in case from object "outIncre" in the same scope
+Info (10281): Verilog HDL Declaration information at dp1.v(5): object "OutJMP" differs only in case from object "outJMP" in the same scope
+Info (10281): Verilog HDL Declaration information at dp1.v(5): object "PC40" differs only in case from object "pC40" in the same scope

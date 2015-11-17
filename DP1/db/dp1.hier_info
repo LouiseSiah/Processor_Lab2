@@ -1,0 +1,137 @@
+|dp1
+CLOCK_50 => clock.IN2
+reset => reset.IN2
+IRload => IRload.IN1
+JMPmux => outJMP.OUTPUTSELECT
+JMPmux => outJMP.OUTPUTSELECT
+JMPmux => outJMP.OUTPUTSELECT
+JMPmux => outJMP.OUTPUTSELECT
+JMPmux => outJMP.OUTPUTSELECT
+PCload => PCload.IN1
+Meminst => address.OUTPUTSELECT
+Meminst => address.OUTPUTSELECT
+Meminst => address.OUTPUTSELECT
+Meminst => address.OUTPUTSELECT
+Meminst => address.OUTPUTSELECT
+IRin[0] => IRin[0].IN1
+IRin[1] => IRin[1].IN1
+IRin[2] => IRin[2].IN1
+IRin[3] => IRin[3].IN1
+IRin[4] => IRin[4].IN1
+IRin[5] => IRin[5].IN1
+IRin[6] => IRin[6].IN1
+IRin[7] => IRin[7].IN1
+Address[0] <= address.DB_MAX_OUTPUT_PORT_TYPE
+Address[1] <= address.DB_MAX_OUTPUT_PORT_TYPE
+Address[2] <= address.DB_MAX_OUTPUT_PORT_TYPE
+Address[3] <= address.DB_MAX_OUTPUT_PORT_TYPE
+Address[4] <= address.DB_MAX_OUTPUT_PORT_TYPE
+OutIncre[0] <= increment:inc.port1
+OutIncre[1] <= increment:inc.port1
+OutIncre[2] <= increment:inc.port1
+OutIncre[3] <= increment:inc.port1
+OutIncre[4] <= increment:inc.port1
+OutJMP[0] <= outJMP[0].DB_MAX_OUTPUT_PORT_TYPE
+OutJMP[1] <= outJMP[1].DB_MAX_OUTPUT_PORT_TYPE
+OutJMP[2] <= outJMP[2].DB_MAX_OUTPUT_PORT_TYPE
+OutJMP[3] <= outJMP[3].DB_MAX_OUTPUT_PORT_TYPE
+OutJMP[4] <= outJMP[4].DB_MAX_OUTPUT_PORT_TYPE
+PC40[0] <= pC40[0].DB_MAX_OUTPUT_PORT_TYPE
+PC40[1] <= pC40[1].DB_MAX_OUTPUT_PORT_TYPE
+PC40[2] <= pC40[2].DB_MAX_OUTPUT_PORT_TYPE
+PC40[3] <= pC40[3].DB_MAX_OUTPUT_PORT_TYPE
+PC40[4] <= pC40[4].DB_MAX_OUTPUT_PORT_TYPE
+IRout[0] <= register:IR.port4
+IRout[1] <= register:IR.port4
+IRout[2] <= register:IR.port4
+IRout[3] <= register:IR.port4
+IRout[4] <= register:IR.port4
+IRout[5] <= register:IR.port4
+IRout[6] <= register:IR.port4
+IRout[7] <= register:IR.port4
+
+
+|dp1|register:IR
+clock => Output[0]~reg0.CLK
+clock => Output[1]~reg0.CLK
+clock => Output[2]~reg0.CLK
+clock => Output[3]~reg0.CLK
+clock => Output[4]~reg0.CLK
+clock => Output[5]~reg0.CLK
+clock => Output[6]~reg0.CLK
+clock => Output[7]~reg0.CLK
+reset => Output[0]~reg0.ACLR
+reset => Output[1]~reg0.ACLR
+reset => Output[2]~reg0.ACLR
+reset => Output[3]~reg0.ACLR
+reset => Output[4]~reg0.ACLR
+reset => Output[5]~reg0.ACLR
+reset => Output[6]~reg0.ACLR
+reset => Output[7]~reg0.ACLR
+load => Output[0]~reg0.ENA
+load => Output[7]~reg0.ENA
+load => Output[6]~reg0.ENA
+load => Output[5]~reg0.ENA
+load => Output[4]~reg0.ENA
+load => Output[3]~reg0.ENA
+load => Output[2]~reg0.ENA
+load => Output[1]~reg0.ENA
+Input[0] => Output[0]~reg0.DATAIN
+Input[1] => Output[1]~reg0.DATAIN
+Input[2] => Output[2]~reg0.DATAIN
+Input[3] => Output[3]~reg0.DATAIN
+Input[4] => Output[4]~reg0.DATAIN
+Input[5] => Output[5]~reg0.DATAIN
+Input[6] => Output[6]~reg0.DATAIN
+Input[7] => Output[7]~reg0.DATAIN
+Output[0] <= Output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= Output[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= Output[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= Output[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= Output[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[5] <= Output[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[6] <= Output[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[7] <= Output[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp1|register:PC
+clock => Output[0]~reg0.CLK
+clock => Output[1]~reg0.CLK
+clock => Output[2]~reg0.CLK
+clock => Output[3]~reg0.CLK
+clock => Output[4]~reg0.CLK
+reset => Output[0]~reg0.ACLR
+reset => Output[1]~reg0.ACLR
+reset => Output[2]~reg0.ACLR
+reset => Output[3]~reg0.ACLR
+reset => Output[4]~reg0.ACLR
+load => Output[0]~reg0.ENA
+load => Output[4]~reg0.ENA
+load => Output[3]~reg0.ENA
+load => Output[2]~reg0.ENA
+load => Output[1]~reg0.ENA
+Input[0] => Output[0]~reg0.DATAIN
+Input[1] => Output[1]~reg0.DATAIN
+Input[2] => Output[2]~reg0.DATAIN
+Input[3] => Output[3]~reg0.DATAIN
+Input[4] => Output[4]~reg0.DATAIN
+Output[0] <= Output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= Output[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= Output[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= Output[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= Output[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp1|increment:inc
+Input[0] => Add0.IN10
+Input[1] => Add0.IN9
+Input[2] => Add0.IN8
+Input[3] => Add0.IN7
+Input[4] => Add0.IN6
+Output[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Output[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Output[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Output[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Output[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
