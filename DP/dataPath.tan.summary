@@ -2,14 +2,44 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
-Type           : Worst-case tpd
+Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 16.292 ns
-From           : select[0]
-To             : muxOP[6]
+Actual Time    : 6.965 ns
+From           : Sub
+To             : dp3:DP3|register:regA|Output[7]
 From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.576 ns
+From           : ram:RAM|altsyncram:register_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a0~portb_address_reg4
+To             : RamToIR[5]
+From Clock     : clock
 To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -3.822 ns
+From           : MemWr
+To             : ram:RAM|altsyncram:register_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a0~porta_we_reg
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 139.08 MHz ( period = 7.190 ns )
+From           : ram:RAM|altsyncram:register_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a0~portb_address_reg4
+To             : dp3:DP3|register:regA|Output[7]
+From Clock     : clock
+To Clock       : clock
 Failed Paths   : 0
 
 Type           : Total number of failed paths

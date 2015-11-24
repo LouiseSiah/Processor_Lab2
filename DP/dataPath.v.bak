@@ -1,13 +1,27 @@
 module dataPath
 (
-	input [1:0]select,
-	input [7:0]data1, data2, data3, data0,
-	output wire [7:0]muxOP
+	input clock, reset, IRload, JMPmux, PCload, Meminst, MemWr, Aload, Sub,
+	input [1:0]Asel,
+	input [7:0]Minput,
+	output [7:0]Moutput,
+	output [2:0]IR75,
+	output Aeq0, Apos,
+	output [7:0] RamToIR // erasable
 );
 
-assign muxOP = ({8{select[1]}} & {8{select[0]}} & data3)
-			  |({8{select[1]}} & {8{!select[0]}} & data2)
-			  |({8{!select[1]}} & {8{select[0]}} & data1)
-			  |({8{!select[1]}} & {8{!select[0]}} & data0);
-			  
+wire [7:0] ramToIR, iRout; 
+wire [4:0] address;
+
+assign IR75 = iRout[7:5];
+assign RamToIR = ramToIR;
+//*************** part 1 - Instruction Cycle ***********************
+dp1 #(.n(5), .m(8)) DP1 (clock, reset, IRload, JMPmux, PCload, Meminst, ramToIR,
+						 address,iRout);
+				
+//************************ ram **************************************
+ram #(.dataSize(8), .memorySize(5)) RAM (clock, MemWr, address, Moutput, ramToIR);
+
+//*************** part 3 - Instruction Set **************************
+dp3 #(.n(8)) DP3 (clock, reset, Aload, Sub, Asel, ramToIR, Minput,
+				   Apos, Aeq0, Moutput);
 endmodule
