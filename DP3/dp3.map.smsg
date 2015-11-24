@@ -1,5 +1,4 @@
-Info (10281): Verilog HDL Declaration information at addSub.v(4): object "x" differs only in case from object "X" in the same scope
-Info (10281): Verilog HDL Declaration information at addSub.v(4): object "y" differs only in case from object "Y" in the same scope
+Info (10281): Verilog HDL Declaration information at addSub.v(5): object "x" differs only in case from object "X" in the same scope
+Info (10281): Verilog HDL Declaration information at addSub.v(5): object "y" differs only in case from object "Y" in the same scope
 Info (10281): Verilog HDL Declaration information at dp3.v(8): object "OutAsel" differs only in case from object "outAsel" in the same scope
 Info (10281): Verilog HDL Declaration information at dp3.v(8): object "A" differs only in case from object "a" in the same scope
-Info (10281): Verilog HDL Declaration information at dp3.v(9): object "ProdSub" differs only in case from object "prodSub" in the same scope

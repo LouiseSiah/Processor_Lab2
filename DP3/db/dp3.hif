@@ -62,48 +62,6 @@ register:regA
 
 # end
 # entity
-addSub
-# storage
-db|dp3.(2).cnf
-db|dp3.(2).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-addsub.v
-62cae094b1a352e17e73f116bebce5
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-n
-8
-PARAMETER_SIGNED_DEC
-USR
-}
-# hierarchies {
-addSub:addSubtractor
-}
-# macro_sequence
-
-# end
-# entity
 dp3
 # storage
 db|dp3.(0).cnf
@@ -115,7 +73,7 @@ ON
 # case_sensitive
 # source_file
 dp3.v
-7a3469a79ffd8ceaca0d05869669cc
+cc9c9876b2a152b45e9b5232c68aacd
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -141,6 +99,48 @@ DEF
 }
 # hierarchies {
 |
+}
+# macro_sequence
+
+# end
+# entity
+addSub
+# storage
+db|dp3.(2).cnf
+db|dp3.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+addsub.v
+93be65aaeacd992326be58fa5ab55d3
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+n
+8
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+addSub:addSubtractor
 }
 # macro_sequence
 

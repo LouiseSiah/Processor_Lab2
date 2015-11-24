@@ -28,8 +28,8 @@ initial
   
 initial 
   begin 
-    $display(" clock| reset | IRin     | IRload |  IRout   | OutIncre  | JMPmux | OutJMP |  PCload | PC40  | OutIncre | Meminst | Address   \n");
-    $monitor("  %b   |   %b   | %b |   %b    | %b |   %b  |   %b    |   %b    |   %b    |  %b  |  %b |     %b  |   %b    |\n", clock, reset, IRin, IRload, IRout, OutIncre, JMPmux, OutJMP, PCload, PC40, OutIncre, Meminst, Address);
+    $display(" clock| reset | IRin     | IRload |  IRout   | OutIncre  | JMPmux | OutJMP  |  PCload | PC40  | OutIncre | Meminst | Address | IR75 | IR40   \n");
+    $monitor("  %b   |   %b   | %b |   %b    | %b |   %b  |   %b    |   %b    |   %b    |  %b  |  %b |     %b  |   %b    | %b | %b", clock, reset, IRin, IRload, IRout, OutIncre, JMPmux, OutJMP, PCload, PC40, OutIncre, Meminst, Address, IRout[7:5], IRout[4:0]);
   end 
   
 initial
@@ -38,7 +38,7 @@ initial
     #4 IRin = 8'b00001111; IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; 
     #2 IRin = 8'b00001111; IRload = 1; JMPmux = 0; PCload = 0; Meminst = 0; 
     #2 IRin = 8'b11110000; IRload = 1; JMPmux = 1; PCload = 0; Meminst = 0; 
-    #2 IRin = 8'b00001100; IRload = 1; JMPmux = 1; PCload = 1; Meminst = 0; 
+    #2 IRin = 8'b11110000; IRload = 1; JMPmux = 1; PCload = 1; Meminst = 0; 
     #2 IRin = 8'b10101010; IRload = 1; JMPmux = 0; PCload = 1; Meminst = 0; 
     #2 IRin = 8'b00000000; IRload = 1; JMPmux = 0; PCload = 1; Meminst = 1; 
     #2 IRin = 8'b00000000; IRload = 1; JMPmux = 0; PCload = 1; Meminst = 0; 

@@ -38,7 +38,6 @@ addSub #(.n(8)) addSubtractor (Sub, a, dp1In, prodSub);
 assign Aeq0 = (!a)? 1:0;
 assign Apos = !(a[n-1:n-1]);
 assign mOutput = a;
-
 endmodule
 
 

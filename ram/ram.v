@@ -1,12 +1,14 @@
-module ram
-(
-	input clock, WE,
-	input [4:0]address,
-	input [7:0]Input,
-	output reg [7:0]Output
-);
+module ram (clock, WE, address, Input, Output);
 
-reg [7:0]register[31:0];
+  parameter dataSize = 8;
+  parameter memorySize = 5;
+  
+	input clock, WE;
+	input [memorySize - 1:0]address;
+	input [dataSize - 1:0]Input;
+	output reg [dataSize - 1:0]Output;
+
+reg [dataSize - 1:0]register[31:0];
 
 always@(posedge clock)
 begin
