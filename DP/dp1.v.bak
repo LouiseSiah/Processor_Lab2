@@ -2,8 +2,8 @@ module dp1 #(parameter n = 5, m = 8)
 (
 	input clock, reset, IRload, JMPmux, PCload, Meminst,
 	input [m-1:0]IRin,
-	output [n-1:0]Address, //OutIncre, OutJMP, PC40, //erasable from outInre
-	output [2:0]IRout
+	output [n-1:0]Address, OutIncre, OutJMP, PC40, //erasable from outInre
+	output [m-1:0]IRout
 );
 
 
@@ -13,7 +13,7 @@ wire [m-1:0]iRout;
 //assign clock = CLOCK_50;
 
 //eraseable
-assign IRout = iRout[7:5];
+assign IRout = iRout;
 assign Address = address;
 //assign OutIncre = outIncre;
 //assign OutJMP = outJMP;

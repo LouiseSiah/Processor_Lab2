@@ -4,8 +4,8 @@ module dp3 #(parameter n = 8)
 	input [1:0]Asel,
 	input [n-1:0]dp1In, mInput,
 	output Apos, Aeq0,
-	output wire [n-1:0] mOutput
-	// output wire [n-1:0]OutAsel, A, ProdSub  //erasable
+	output wire [n-1:0] mOutput,
+ 	output wire [n-1:0]OutAsel, A, ProdSub  //erasable
 );
 
 // parameter n = 8;
@@ -14,9 +14,9 @@ wire [n-1:0]outAsel, a, prodSub;
 wire [n-1:0]data2, data1, data0;
 
 //wiring //erasable
-//assign A = a;
-//assign OutAsel = outAsel;
-//assign ProdSub = prodSub;
+assign A = a;
+assign OutAsel = outAsel;
+assign ProdSub = prodSub;
 
 //4to1 mux
 assign outAsel = ({n{Asel[1]}} & {n{Asel[0]}} & 0)
