@@ -11,19 +11,19 @@ module dataPath_tb();
 	wire Aeq0, Apos;
   wire [7:0] RamToIR, OutAsel, A, ProdSub;
   wire [4:0] Address, IR40, OutIncre, OutJMP, PC40;
-  
+
   integer i, j;
 dataPath DP ( clock, reset, IRload, JMPmux, PCload, Meminst, MemWr, Aload, Sub, Asel, Minput,
               Moutput, IR75, Aeq0, Apos, RamToIR, OutAsel, A, ProdSub, Address, IR40, OutIncre, OutJMP, PC40 );
-              
-  
-initial 
- begin 
+
+
+initial
+ begin
    reset <= 0;
    @(posedge clock);
    @(negedge clock);
    reset <= 1;
- end 
+ end
 
 initial
   begin
@@ -31,21 +31,50 @@ initial
     forever #1 clock = ~clock;
   end
 
-initial 
-  begin 
-  $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput  |Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP  | PC40  | Address | OutAsel, ProdSub");
-  $monitor("%b  |%b  | %b  |  %b   |%b|  %b    |  %b   | %b | %b|%b |%b |%b|   %b  | %b | %b | %b  | %b   | %b | %b | %b | %b | %b | %b ", clock, reset, JMPmux, PCload, IR40, Meminst, MemWr, Sub, Asel, Aload, Minput, Moutput, IRload, IR75, Aeq0, Apos, RamToIR, OutIncre, OutJMP, PC40, Address, OutAsel,   ProdSub);
+initial
+  begin
+  #4   $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+       $display("%b  |%b  | %b  |  %b   |%b|  %b    |  %b   | %b | %b|%b |%b |%b|   %b  | %b | %b | %b  | %b   | %b | %b | %b | %b | %b | %b ", clock, reset, JMPmux, PCload, IR40, Meminst, MemWr, Sub, Asel, Aload, Minput, Moutput, IRload, IR75, Aeq0, Apos, RamToIR, OutIncre, OutJMP, PC40, Address, OutAsel,   ProdSub);
+  #130 $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+       $monitor("%b  |%b  | %b  |  %b   |%b|  %b    |  %b   | %b | %b|%b |%b |%b|   %b  | %b | %b | %b  | %b   | %b | %b | %b | %b | %b | %b ", clock, reset, JMPmux, PCload, IR40, Meminst, MemWr, Sub, Asel, Aload, Minput, Moutput, IRload, IR75, Aeq0, Apos, RamToIR, OutIncre, OutJMP, PC40, Address, OutAsel,   ProdSub);
   end
 
 initial
   begin
-  #3 IRload = 0; JMPmux = 1; PCload = 0; Meminst = 0; MemWr = 1; Aload = 0; Sub = 0; Asel = 1; Minput = 1;
-  #2 IRload = 0; JMPmux = 1; PCload = 1; Meminst = 0; MemWr = 1; Aload = 1; Sub = 0; Asel = 1; Minput = 10;
-  // #2 IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 1; Minput = 1;
-  #2 store();
-  #32 IRload = 1; JMPmux = 1; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 1; Minput = 1;
-  #2 IRload = 1; JMPmux = 1; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 2; Minput = 1;
-  // #2 IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 1; Minput = 1;
+  #2  IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 0; Sub = 0; Asel = 0; Minput = 0;
+  #2  IRload = 0; JMPmux = 1; PCload = 0; Meminst = 0; MemWr = 1; Aload = 0; Sub = 0; Asel = 1; Minput = 1;
+  #2  IRload = 0; JMPmux = 1; PCload = 1; Meminst = 0; MemWr = 1; Aload = 1; Sub = 0; Asel = 1; Minput = 126;
+  //  #2 IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 1; Minput = 1;
+  #2  store();
+  #4  $display("--------------------fetch check-----------------------");
+      IRload = 1; JMPmux = 0; PCload = 1; Meminst = 0; MemWr = 0; Aload = 0; Sub = 0; Asel = 0; Minput = 11;
+  #2  $display("--------------------decode check-----------------------");
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+      IRload = 0; JMPmux = 0; PCload = 0; Meminst = 1; MemWr = 0; Aload = 0; Sub = 0; Asel = 0; Minput = 170;
+  #2  $display("--------------------load check-----------------------");
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+      IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 2; Minput = 170;
+  #2  $display("--------------------store check-----------------------");
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+      IRload = 0; JMPmux = 0; PCload = 0; Meminst = 1; MemWr = 1; Aload = 1; Sub = 0; Asel = 1; Minput = 170;
+  #4  $display("--------------------add check-----------------------");
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+      IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 0; Minput = 180;
+  #2  $display("-----------------------sub check-----------------------");
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+      IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 1; Asel = 2; Minput = 110;
+  #2  $display("-----------------------input check-----------------------");
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+      IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 1; Minput = 205;
+  #2  $display("-----------------------JZ check------- WITH PCLOAD IS 0----------------"); 
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");        
+      IRload = 0; JMPmux = 1; PCload = 0; Meminst = 0; MemWr = 0; Aload = 0; Sub = 0; Asel = 0; Minput = 170;
+  #2  $display("-----------------------JZ check------- WITH PCLOAD IS 1----------------");
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+      IRload = 0; JMPmux = 1; PCload = 1; Meminst = 0; MemWr = 0; Aload = 0; Sub = 0; Asel = 0; Minput = 170;
+  #2  $display("----------------------- JPOS  ****----------------");
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");        
+      IRload = 0; JMPmux = 0; PCload = 1; Meminst = 0; MemWr = 0; Aload = 0; Sub = 0; Asel = 0; Minput = 170;
   end
 
 task store;
@@ -59,6 +88,6 @@ begin
         end
   end
 end
-endtask  
+endtask
 
 endmodule
