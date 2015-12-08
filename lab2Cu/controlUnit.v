@@ -1,43 +1,43 @@
+// module controlUnit//declare o/p & i/p
+// (
+	// input clock, 
+	// input [0:0]KEY,
+	// input [9:0]SW,
+	// output [9:0]LEDR, LEDG
+// );
+
 module controlUnit//declare o/p & i/p
 (
-	input CLOCK_50, 
-	input [0:0]KEY,
-	input [9:0]SW,
-	output [9:0]LEDR, LEDG
+	input clock, reset, Enter,
+	//status signals
+	input [2:0]IR,
+	input Aeq0, Apos,
+	//control signals
+	output reg IRload, JMPmux, PCload, Meminst, MemWr, Aload, Sub, Halt,
+	output reg [1:0]Asel,
+	output wire [3:0]DisplayState
 );
 
-//module controlUnit//declare o/p & i/p
-//(
-//	input CLOCK_50, reset, Enter,
-//	//status signals
-//	input [2:0]IR,
-//	input Aeq0, Apos,
-//	//control signals
-//	output reg IRload, JMPmux, PCload, Meminst, MemWr, Aload, Sub, Halt,
-//	output reg [1:0]Asel,
-//	output wire [3:0]DisplayState
-//);
-reg [1:0]Asel;
-reg IRload, JMPmux, PCload, Meminst, MemWr, Aload, Sub, Halt;
-wire [3:0]DisplayState;
-wire [2:0]IR;
+// reg [1:0]Asel;
+// reg IRload, JMPmux, PCload, Meminst, MemWr, Aload, Sub, Halt;
+// wire [3:0]DisplayState;
+// wire [2:0]IR;
 
-
-assign reset = KEY[0];
-assign Enter = SW[9];
-assign IR[2:0] = SW[2:0];
-assign Aeq0 = SW[3];
-assign Apos = SW[4];
-assign LEDR[9] = IRload;
-assign LEDR[8] = JMPmux;
-assign LEDR[7] = PCload;
-assign LEDR[6] = Meminst;
-assign LEDR[5] = MemWr;
-assign LEDR[4:3] = Asel;
-assign LEDR[2] = Aload;
-assign LEDR[1] = Sub;
-assign LEDR[0] = Halt;
-assign LEDG[3:0] = DisplayState[3:0];
+// assign reset = KEY[0];
+// assign Enter = SW[9];
+// assign IR[2:0] = SW[2:0];
+// assign Aeq0 = SW[3];
+// assign Apos = SW[4];
+// assign LEDR[9] = IRload;
+// assign LEDR[8] = JMPmux;
+// assign LEDR[7] = PCload;
+// assign LEDR[6] = Meminst;
+// assign LEDR[5] = MemWr;
+// assign LEDR[4:3] = Asel;
+// assign LEDR[2] = Aload;
+// assign LEDR[1] = Sub;
+// assign LEDR[0] = Halt;
+// assign LEDG[3:0] = DisplayState[3:0];
 
 
 //declare the state's name
@@ -51,9 +51,9 @@ reg [3:0] n_state, state;
 //output the Statel
 assign DisplayState = state;
 
-//frequency divider 
-wire clock;
-oneSecClock myClock (CLOCK_50, reset, clock);  
+// //frequency divider 
+// wire clock;
+// oneSecClock myClock (CLOCK_50, reset, clock);  
 
 //**********Code start HERE****************************
 //asynchronous clock and reset

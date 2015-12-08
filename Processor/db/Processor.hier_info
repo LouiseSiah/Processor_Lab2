@@ -487,8 +487,8 @@ Output[7] <= product.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Processor|controlUnit:myCU
-CLOCK_50 => CLOCK_50.IN1
-reset => reset.IN1
+clock => state~1.DATAIN
+reset => state~3.DATAIN
 Enter => Selector0.IN4
 Enter => Selector1.IN2
 IR[0] => Decoder0.IN2
@@ -510,61 +510,5 @@ DisplayState[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
 DisplayState[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
 DisplayState[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 DisplayState[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Processor|controlUnit:myCU|oneSecClock:myClock
-CLOCK_50 => clock~reg0.CLK
-CLOCK_50 => count25M[0].CLK
-CLOCK_50 => count25M[1].CLK
-CLOCK_50 => count25M[2].CLK
-CLOCK_50 => count25M[3].CLK
-CLOCK_50 => count25M[4].CLK
-CLOCK_50 => count25M[5].CLK
-CLOCK_50 => count25M[6].CLK
-CLOCK_50 => count25M[7].CLK
-CLOCK_50 => count25M[8].CLK
-CLOCK_50 => count25M[9].CLK
-CLOCK_50 => count25M[10].CLK
-CLOCK_50 => count25M[11].CLK
-CLOCK_50 => count25M[12].CLK
-CLOCK_50 => count25M[13].CLK
-CLOCK_50 => count25M[14].CLK
-CLOCK_50 => count25M[15].CLK
-CLOCK_50 => count25M[16].CLK
-CLOCK_50 => count25M[17].CLK
-CLOCK_50 => count25M[18].CLK
-CLOCK_50 => count25M[19].CLK
-CLOCK_50 => count25M[20].CLK
-CLOCK_50 => count25M[21].CLK
-CLOCK_50 => count25M[22].CLK
-CLOCK_50 => count25M[23].CLK
-CLOCK_50 => count25M[24].CLK
-reset => count25M[0].ACLR
-reset => count25M[1].ACLR
-reset => count25M[2].ACLR
-reset => count25M[3].ACLR
-reset => count25M[4].ACLR
-reset => count25M[5].ACLR
-reset => count25M[6].ACLR
-reset => count25M[7].ACLR
-reset => count25M[8].ACLR
-reset => count25M[9].ACLR
-reset => count25M[10].ACLR
-reset => count25M[11].ACLR
-reset => count25M[12].ACLR
-reset => count25M[13].ACLR
-reset => count25M[14].ACLR
-reset => count25M[15].ACLR
-reset => count25M[16].ACLR
-reset => count25M[17].ACLR
-reset => count25M[18].ACLR
-reset => count25M[19].ACLR
-reset => count25M[20].ACLR
-reset => count25M[21].ACLR
-reset => count25M[22].ACLR
-reset => count25M[23].ACLR
-reset => count25M[24].ACLR
-reset => clock~reg0.ENA
-clock <= clock~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

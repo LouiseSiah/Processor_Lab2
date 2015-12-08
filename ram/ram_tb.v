@@ -1,21 +1,21 @@
 module ram_tb();
 
-  parameter dataSize = 8;
-  parameter memorySize = 5;
+  // parameter dataSize = 8;
+  // parameter memorySize = 5;
 
 //input reg  
 	reg clock, WE;
-	reg [memorySize - 1:0]address;
-	reg [dataSize - 1:0]Input;
+	reg [4:0]address;
+	reg [7:0]Input;
 
 //output wire
-	wire [dataSize - 1:0]Output;
+	wire [7:0]Output;
   
 //temp storage
   // reg [memorySize - 1:0] location; 
   integer i, j;
   
-ram #(.dataSize(dataSize), .memorySize(memorySize)) ram1 (clock, WE, address, Input, Output);
+ram ram1 (clock, WE, address, Input, Output);
 
 // initial 
  // begin 

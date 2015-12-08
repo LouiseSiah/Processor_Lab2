@@ -35,13 +35,13 @@ initial
 initial
   begin
     #3 IRin = 0 ; IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; 
-    #4 IRin = 8'b00001111; IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; 
-    #2 IRin = 8'b00001111; IRload = 1; JMPmux = 0; PCload = 0; Meminst = 0; 
+    #4 IRin = 8'b01001111; IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; 
+    #2 IRin = 8'b01001111; IRload = 1; JMPmux = 0; PCload = 0; Meminst = 0; 
     #2 IRin = 8'b11110000; IRload = 1; JMPmux = 1; PCload = 0; Meminst = 0; 
     #2 IRin = 8'b11110000; IRload = 1; JMPmux = 1; PCload = 1; Meminst = 0; 
     #2 IRin = 8'b10101010; IRload = 1; JMPmux = 0; PCload = 1; Meminst = 0; 
-    #2 IRin = 8'b00000000; IRload = 1; JMPmux = 0; PCload = 1; Meminst = 1; 
-    #2 IRin = 8'b00000000; IRload = 1; JMPmux = 0; PCload = 1; Meminst = 0; 
+    #2 IRin = 8'b10000001; IRload = 1; JMPmux = 0; PCload = 1; Meminst = 1; 
+    #2 IRin = 8'b00100001; IRload = 1; JMPmux = 0; PCload = 1; Meminst = 0; 
   end
   
 endmodule 

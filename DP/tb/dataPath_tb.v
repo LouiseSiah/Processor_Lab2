@@ -33,15 +33,19 @@ initial
 
 initial
   begin
-  #4   $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+       $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
        $display("%b  |%b  | %b  |  %b   |%b|  %b    |  %b   | %b | %b|%b |%b |%b|   %b  | %b | %b | %b  | %b   | %b | %b | %b | %b | %b | %b ", clock, reset, JMPmux, PCload, IR40, Meminst, MemWr, Sub, Asel, Aload, Minput, Moutput, IRload, IR75, Aeq0, Apos, RamToIR, OutIncre, OutJMP, PC40, Address, OutAsel,   ProdSub);
+  #1   $display("%b  |%b  | %b  |  %b   |%b|  %b    |  %b   | %b | %b|%b |%b |%b|   %b  | %b | %b | %b  | %b   | %b | %b | %b | %b | %b | %b ", clock, reset, JMPmux, PCload, IR40, Meminst, MemWr, Sub, Asel, Aload, Minput, Moutput, IRload, IR75, Aeq0, Apos, RamToIR, OutIncre, OutJMP, PC40, Address, OutAsel,   ProdSub);
+  #2   $display("%b  |%b  | %b  |  %b   |%b|  %b    |  %b   | %b | %b|%b |%b |%b|   %b  | %b | %b | %b  | %b   | %b | %b | %b | %b | %b | %b ", clock, reset, JMPmux, PCload, IR40, Meminst, MemWr, Sub, Asel, Aload, Minput, Moutput, IRload, IR75, Aeq0, Apos, RamToIR, OutIncre, OutJMP, PC40, Address, OutAsel,   ProdSub);
+  #3   $display("%b  |%b  | %b  |  %b   |%b|  %b    |  %b   | %b | %b|%b |%b |%b|   %b  | %b | %b | %b  | %b   | %b | %b | %b | %b | %b | %b ", clock, reset, JMPmux, PCload, IR40, Meminst, MemWr, Sub, Asel, Aload, Minput, Moutput, IRload, IR75, Aeq0, Apos, RamToIR, OutIncre, OutJMP, PC40, Address, OutAsel,   ProdSub);
   #130 $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
        $monitor("%b  |%b  | %b  |  %b   |%b|  %b    |  %b   | %b | %b|%b |%b |%b|   %b  | %b | %b | %b  | %b   | %b | %b | %b | %b | %b | %b ", clock, reset, JMPmux, PCload, IR40, Meminst, MemWr, Sub, Asel, Aload, Minput, Moutput, IRload, IR75, Aeq0, Apos, RamToIR, OutIncre, OutJMP, PC40, Address, OutAsel,   ProdSub);
   end
 
 initial
   begin
-  #2  IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 0; Sub = 0; Asel = 0; Minput = 0;
+  #2  $display("--------------------start check-----------------------");
+      IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 0; Sub = 0; Asel = 0; Minput = 0;
   #2  IRload = 0; JMPmux = 1; PCload = 0; Meminst = 0; MemWr = 1; Aload = 0; Sub = 0; Asel = 1; Minput = 1;
   #2  IRload = 0; JMPmux = 1; PCload = 1; Meminst = 0; MemWr = 1; Aload = 1; Sub = 0; Asel = 1; Minput = 126;
   //  #2 IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 1; Minput = 1;
@@ -57,7 +61,10 @@ initial
   #2  $display("--------------------store check-----------------------");
       $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
       IRload = 0; JMPmux = 0; PCload = 0; Meminst = 1; MemWr = 1; Aload = 1; Sub = 0; Asel = 1; Minput = 170;
-  #4  $display("--------------------add check-----------------------");
+  #4  $display("--------------------read store check-----------------------");
+      $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
+      IRload = 0; JMPmux = 0; PCload = 0; Meminst = 1; MemWr = 0; Aload = 1; Sub = 0; Asel = 1; Minput = 171;
+  #2  $display("--------------------add check-----------------------");
       $display("clk|rst|Jmux|PCload|IR40 |Meminst|MemWr|Sub|Asel|Aload|Minput | Moutput |IRload|IR75|Aeq0|Apos|RamToIR | OutIncre| OutJMP| PC40  | Address | OutAsel, ProdSub");
       IRload = 0; JMPmux = 0; PCload = 0; Meminst = 0; MemWr = 0; Aload = 1; Sub = 0; Asel = 0; Minput = 180;
   #2  $display("-----------------------sub check-----------------------");

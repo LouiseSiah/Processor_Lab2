@@ -22,7 +22,7 @@ dp1 #(.n(5), .m(8)) DP1 (clock, reset, IRload, JMPmux, PCload, Meminst, ramToIR,
 						 address, OutIncre, OutJMP, PC40, iRout);
 				
 //************************ ram **************************************
-ram #(.dataSize(8), .memorySize(5)) RAM (clock, MemWr, address, Moutput, ramToIR);
+ram RAM (clock, MemWr, address, Moutput, ramToIR);
 
 //*************** part 3 - Instruction Set **************************
 dp3 #(.n(8)) DP3 (clock, reset, Aload, Sub, Asel, ramToIR, Minput,

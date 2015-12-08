@@ -6,7 +6,7 @@ module dataPath
 	output [7:0]Moutput,
 	output [2:0]IR75,
 	output Aeq0, Apos,
-	output [7:0] RamToIR, OutAsel, A, ProdSub // erasable
+	output [7:0] RamToIR, OutAsel, A, ProdSub, // erasable
 	output [4:0] Address, IR40, OutIncre, OutJMP, PC40  // erasable
 );
 

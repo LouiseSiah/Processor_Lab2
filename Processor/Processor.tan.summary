@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 4.424 ns
-From           : Minput[1]
-To             : dataPath:myDP|dp3:DP3|register:regA|Output[1]
+Actual Time    : 4.838 ns
+From           : Minput[5]
+To             : dataPath:myDP|dp3:DP3|register:regA|Output[5]
 From Clock     : --
 To Clock       : CLOCK_50
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 14.169 ns
+Actual Time    : 10.854 ns
 From           : controlUnit:myCU|state.halt
-To             : DisplayState[0]
+To             : DisplayState[2]
 From Clock     : CLOCK_50
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 0.241 ns
-From           : reset
-To             : controlUnit:myCU|oneSecClock:myClock|clock
+Actual Time    : -3.241 ns
+From           : Minput[2]
+To             : dataPath:myDP|dp3:DP3|register:regA|Output[2]
 From Clock     : --
 To Clock       : CLOCK_50
 Failed Paths   : 0
@@ -35,22 +35,12 @@ Failed Paths   : 0
 Type           : Clock Setup: 'CLOCK_50'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 137.32 MHz ( period = 7.282 ns )
+Actual Time    : 137.70 MHz ( period = 7.262 ns )
 From           : dataPath:myDP|ram:RAM|altsyncram:register_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a0~portb_address_reg4
-To             : dataPath:myDP|dp3:DP3|register:regA|Output[2]
+To             : dataPath:myDP|dp3:DP3|register:regA|Output[6]
 From Clock     : CLOCK_50
 To Clock       : CLOCK_50
 Failed Paths   : 0
-
-Type           : Clock Hold: 'CLOCK_50'
-Slack          : Not operational: Clock Skew > Data Delay
-Required Time  : None
-Actual Time    : N/A
-From           : dataPath:myDP|dp1:DP1|register:IR|Output[7]
-To             : controlUnit:myCU|state.load
-From Clock     : CLOCK_50
-To Clock       : CLOCK_50
-Failed Paths   : 24
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +50,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 24
+Failed Paths   : 0
 
 --------------------------------------------------------------------------------------
 

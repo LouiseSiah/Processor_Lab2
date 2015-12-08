@@ -1,6 +1,7 @@
 Info (10281): Verilog HDL Declaration information at addSub.v(5): object "x" differs only in case from object "X" in the same scope
 Info (10281): Verilog HDL Declaration information at addSub.v(5): object "y" differs only in case from object "Y" in the same scope
 Info (10281): Verilog HDL Declaration information at dataPath.v(9): object "RamToIR" differs only in case from object "ramToIR" in the same scope
+Info (10281): Verilog HDL Declaration information at dataPath.v(10): object "Address" differs only in case from object "address" in the same scope
 Info (10281): Verilog HDL Declaration information at dp1.v(5): object "Address" differs only in case from object "address" in the same scope
 Info (10281): Verilog HDL Declaration information at dp1.v(5): object "OutIncre" differs only in case from object "outIncre" in the same scope
 Info (10281): Verilog HDL Declaration information at dp1.v(5): object "OutJMP" differs only in case from object "outJMP" in the same scope
