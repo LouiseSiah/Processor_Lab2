@@ -1,0 +1,29 @@
+module Processor_tb();
+
+//input reg
+	reg  clock, reset, Enter, cheat;
+	reg  [7:0] Minput;
+
+//output wire
+	wire Halt;
+	wire [7:0] Moutput;
+	wire [3:0] DisplayState;
+
+Processor mine ( clock, reset, Enter, cheat, Minput,
+                 Halt, Moutput, DisplayState );
+
+                 
+/************************* GLOBAL INITIAL CLOCK and GLOBAL INITIAL RESET **********************/
+initial
+begin
+  reset <= 0; cheat <= 1;
+  @(posedge clock);
+  @(negedge clock);
+  reset <= 1;  cheat <= 0;
+end
+
+initial
+begin
+  clock = 0;
+  forever #1 clock = ~clock;
+end

@@ -7,42 +7,30 @@ module ram (clock, WE, cheat, address, Input, Output);
 
 reg [7:0]register[31:0];
 
-always@(posedge clock, posedge cheat)
+always@(posedge clock)
 begin
 if(cheat)
 begin
-  register[0] <= 170;
-  register[1] <= 1;
-  register[2] <= 2;
-  register[3] <= 3;
-  register[4] <= 4;
-  register[5] <= 5;
-  register[6] <= 6;
-  register[7] <= 7;
-  register[8] <= 8;
-  register[9] <= 9;
-  register[10] <= 10;
-  register[11] <= 11;
-  register[12] <= 12;
-  register[13] <= 13;
-  register[14] <= 14;
-  register[15] <= 15;
-  register[16] <= 16;
-  register[17] <= 17;
-  register[18] <= 18;
-  register[19] <= 19;
-  register[20] <= 20;
-  register[21] <= 21;
-  register[22] <= 22;
-  register[23] <= 23;
-  register[24] <= 24;
-  register[25] <= 25;
-  register[26] <= 26;
-  register[27] <= 27;
-  register[28] <= 28;
-  register[29] <= 29;
-  register[30] <= 30;
-  register[31] <= 31;
+  register[5'b00000] <= 8'b10000000;
+  register[5'b00001] <= 8'b00111110;
+  register[5'b00010] <= 8'b10000000;
+  register[5'b00011] <= 8'b00111111;
+  register[5'b00100] <= 8'b00011110;
+  register[5'b00101] <= 8'b01111111;
+  register[5'b00110] <= 8'b10110000;
+  register[5'b00111] <= 8'b11001100;
+  register[5'b01000] <= 8'b00011111;
+  register[5'b01001] <= 8'b01111110;
+  register[5'b01010] <= 8'b00111111;
+  register[5'b01011] <= 8'b11000100;
+  register[5'b01100] <= 8'b00011110;
+  register[5'b01101] <= 8'b01111111;
+  register[5'b01110] <= 8'b00111110;
+  register[5'b01111] <= 8'b11000100;
+  register[5'b10000] <= 8'b00011110;
+  register[5'b10001] <= 8'b11111111;
+  register[5'b11110] <= 8'b00000000;
+  register[5'b11111] <= 8'b00000000;
 end
 else
 	if(WE) //write
