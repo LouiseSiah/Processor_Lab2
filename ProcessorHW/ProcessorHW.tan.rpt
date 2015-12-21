@@ -1,0 +1,860 @@
+Classic Timing Analyzer report for ProcessorHW
+Mon Dec 21 12:33:58 2015
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'CLOCK_50'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------------------------------+------------------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                                     ; To                                                         ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------------------------------+------------------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.671 ns                         ; KEY[0]                                                   ; oneSecClock:myClock|clock                                  ; --         ; CLOCK_50 ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 15.514 ns                        ; Processor:HW|controlUnit:myCU|state.sub                  ; LEDG[1]                                                    ; CLOCK_50   ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 3.859 ns                         ; SW[4]                                                    ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[4] ; --         ; CLOCK_50 ; 0            ;
+; Clock Setup: 'CLOCK_50'      ; N/A   ; None          ; 141.46 MHz ( period = 7.069 ns ) ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[0]               ; CLOCK_50   ; CLOCK_50 ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                                          ;                                                            ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------------------------------+------------------------------------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLOCK_50        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLOCK_50'                                                                                                                                                                                                                                                                                                   ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------------------+----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                                     ; To                                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------------------+----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 141.46 MHz ( period = 7.069 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[0]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.829 ns                ;
+; N/A                                     ; 142.17 MHz ( period = 7.034 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.794 ns                ;
+; N/A                                     ; 143.39 MHz ( period = 6.974 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|Output[0]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.734 ns                ;
+; N/A                                     ; 143.99 MHz ( period = 6.945 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.705 ns                ;
+; N/A                                     ; 144.36 MHz ( period = 6.927 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[3]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.687 ns                ;
+; N/A                                     ; 144.78 MHz ( period = 6.907 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|Output[6]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.664 ns                ;
+; N/A                                     ; 146.37 MHz ( period = 6.832 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|Output[3]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.592 ns                ;
+; N/A                                     ; 146.67 MHz ( period = 6.818 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|Output[6]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.575 ns                ;
+; N/A                                     ; 146.67 MHz ( period = 6.818 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|Output[4]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.576 ns                ;
+; N/A                                     ; 147.28 MHz ( period = 6.790 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[4] ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 148.61 MHz ( period = 6.729 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|Output[4]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.487 ns                ;
+; N/A                                     ; 149.79 MHz ( period = 6.676 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|Output[1]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.431 ns                ;
+; N/A                                     ; 149.93 MHz ( period = 6.670 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[2]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.430 ns                ;
+; N/A                                     ; 150.08 MHz ( period = 6.663 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[4] ; Processor:HW|dataPath:myDP|ram:RAM|Output[6]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.420 ns                ;
+; N/A                                     ; 150.15 MHz ( period = 6.660 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|Output[2]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.420 ns                ;
+; N/A                                     ; 151.03 MHz ( period = 6.621 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.381 ns                ;
+; N/A                                     ; 151.75 MHz ( period = 6.590 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.350 ns                ;
+; N/A                                     ; 151.79 MHz ( period = 6.588 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|Output[1]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.343 ns                ;
+; N/A                                     ; 152.11 MHz ( period = 6.574 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[4] ; Processor:HW|dataPath:myDP|ram:RAM|Output[4]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.332 ns                ;
+; N/A                                     ; 152.16 MHz ( period = 6.572 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|Output[2]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.332 ns                ;
+; N/A                                     ; 152.91 MHz ( period = 6.540 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[1]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.295 ns                ;
+; N/A                                     ; 152.95 MHz ( period = 6.538 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|Output[0]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.298 ns                ;
+; N/A                                     ; 153.63 MHz ( period = 6.509 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|Output[3]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.269 ns                ;
+; N/A                                     ; 153.66 MHz ( period = 6.508 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[6]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.265 ns                ;
+; N/A                                     ; 153.70 MHz ( period = 6.506 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[6]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.263 ns                ;
+; N/A                                     ; 154.51 MHz ( period = 6.472 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|Output[5]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.230 ns                ;
+; N/A                                     ; 154.99 MHz ( period = 6.452 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[4]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.210 ns                ;
+; N/A                                     ; 155.04 MHz ( period = 6.450 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[4]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.208 ns                ;
+; N/A                                     ; 155.40 MHz ( period = 6.435 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|Output[1]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.190 ns                ;
+; N/A                                     ; 155.67 MHz ( period = 6.424 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[24][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.176 ns                ;
+; N/A                                     ; 155.67 MHz ( period = 6.424 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[24][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.176 ns                ;
+; N/A                                     ; 155.67 MHz ( period = 6.424 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[24][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.176 ns                ;
+; N/A                                     ; 155.67 MHz ( period = 6.424 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[24][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.176 ns                ;
+; N/A                                     ; 155.67 MHz ( period = 6.424 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[24][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.176 ns                ;
+; N/A                                     ; 155.67 MHz ( period = 6.424 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[24][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.176 ns                ;
+; N/A                                     ; 155.67 MHz ( period = 6.424 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[24][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.176 ns                ;
+; N/A                                     ; 155.67 MHz ( period = 6.424 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[24][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.176 ns                ;
+; N/A                                     ; 155.79 MHz ( period = 6.419 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|Output[2]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.179 ns                ;
+; N/A                                     ; 156.10 MHz ( period = 6.406 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[6]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.163 ns                ;
+; N/A                                     ; 156.67 MHz ( period = 6.383 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|Output[5]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.141 ns                ;
+; N/A                                     ; 156.79 MHz ( period = 6.378 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[4] ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.138 ns                ;
+; N/A                                     ; 156.99 MHz ( period = 6.370 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|Output[6]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.127 ns                ;
+; N/A                                     ; 157.13 MHz ( period = 6.364 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[3]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.124 ns                ;
+; N/A                                     ; 157.18 MHz ( period = 6.362 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[3]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.122 ns                ;
+; N/A                                     ; 157.33 MHz ( period = 6.356 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|Output[3]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.116 ns                ;
+; N/A                                     ; 157.70 MHz ( period = 6.341 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.093 ns                ;
+; N/A                                     ; 157.70 MHz ( period = 6.341 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.093 ns                ;
+; N/A                                     ; 157.70 MHz ( period = 6.341 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.093 ns                ;
+; N/A                                     ; 157.70 MHz ( period = 6.341 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.093 ns                ;
+; N/A                                     ; 157.70 MHz ( period = 6.341 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.093 ns                ;
+; N/A                                     ; 157.70 MHz ( period = 6.341 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.093 ns                ;
+; N/A                                     ; 157.70 MHz ( period = 6.341 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.093 ns                ;
+; N/A                                     ; 157.70 MHz ( period = 6.341 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.093 ns                ;
+; N/A                                     ; 157.83 MHz ( period = 6.336 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[24][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.088 ns                ;
+; N/A                                     ; 157.83 MHz ( period = 6.336 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[24][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.088 ns                ;
+; N/A                                     ; 157.83 MHz ( period = 6.336 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[24][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.088 ns                ;
+; N/A                                     ; 157.83 MHz ( period = 6.336 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[24][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.088 ns                ;
+; N/A                                     ; 157.83 MHz ( period = 6.336 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[24][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.088 ns                ;
+; N/A                                     ; 157.83 MHz ( period = 6.336 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[24][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.088 ns                ;
+; N/A                                     ; 157.83 MHz ( period = 6.336 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[24][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.088 ns                ;
+; N/A                                     ; 157.83 MHz ( period = 6.336 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[24][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.088 ns                ;
+; N/A                                     ; 157.88 MHz ( period = 6.334 ns )                    ; Processor:HW|dataPath:myDP|ram:RAM|register[4][7]        ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.098 ns                ;
+; N/A                                     ; 158.20 MHz ( period = 6.321 ns )                    ; Processor:HW|dataPath:myDP|ram:RAM|register[7][2]        ; Processor:HW|dataPath:myDP|ram:RAM|Output[2]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.081 ns                ;
+; N/A                                     ; 158.25 MHz ( period = 6.319 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[0]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.079 ns                ;
+; N/A                                     ; 158.25 MHz ( period = 6.319 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.079 ns                ;
+; N/A                                     ; 158.30 MHz ( period = 6.317 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.077 ns                ;
+; N/A                                     ; 158.40 MHz ( period = 6.313 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[10][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.074 ns                ;
+; N/A                                     ; 158.40 MHz ( period = 6.313 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[10][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.074 ns                ;
+; N/A                                     ; 158.40 MHz ( period = 6.313 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[10][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.074 ns                ;
+; N/A                                     ; 158.40 MHz ( period = 6.313 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[10][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.074 ns                ;
+; N/A                                     ; 158.40 MHz ( period = 6.313 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[10][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.074 ns                ;
+; N/A                                     ; 158.40 MHz ( period = 6.313 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[10][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.074 ns                ;
+; N/A                                     ; 158.40 MHz ( period = 6.313 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[10][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.074 ns                ;
+; N/A                                     ; 158.40 MHz ( period = 6.313 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[10][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.074 ns                ;
+; N/A                                     ; 159.21 MHz ( period = 6.281 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[2]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.041 ns                ;
+; N/A                                     ; 159.26 MHz ( period = 6.279 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[2]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.039 ns                ;
+; N/A                                     ; 159.54 MHz ( period = 6.268 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[1]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.023 ns                ;
+; N/A                                     ; 159.59 MHz ( period = 6.266 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[1]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.021 ns                ;
+; N/A                                     ; 159.97 MHz ( period = 6.251 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[4] ; Processor:HW|dataPath:myDP|ram:RAM|Output[6]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 6.008 ns                ;
+; N/A                                     ; 160.57 MHz ( period = 6.228 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[4] ; Processor:HW|dataPath:myDP|ram:RAM|Output[5]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.986 ns                ;
+; N/A                                     ; 160.64 MHz ( period = 6.225 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[10][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.986 ns                ;
+; N/A                                     ; 160.64 MHz ( period = 6.225 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[10][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.986 ns                ;
+; N/A                                     ; 160.64 MHz ( period = 6.225 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[10][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.986 ns                ;
+; N/A                                     ; 160.64 MHz ( period = 6.225 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[10][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.986 ns                ;
+; N/A                                     ; 160.64 MHz ( period = 6.225 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[10][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.986 ns                ;
+; N/A                                     ; 160.64 MHz ( period = 6.225 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[10][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.986 ns                ;
+; N/A                                     ; 160.64 MHz ( period = 6.225 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[10][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.986 ns                ;
+; N/A                                     ; 160.64 MHz ( period = 6.225 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[10][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.986 ns                ;
+; N/A                                     ; 160.95 MHz ( period = 6.213 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|Output[0]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.973 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.967 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.967 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.967 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.967 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.967 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.967 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.967 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.967 ns                ;
+; N/A                                     ; 161.73 MHz ( period = 6.183 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.935 ns                ;
+; N/A                                     ; 161.73 MHz ( period = 6.183 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.935 ns                ;
+; N/A                                     ; 161.73 MHz ( period = 6.183 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.935 ns                ;
+; N/A                                     ; 161.73 MHz ( period = 6.183 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.935 ns                ;
+; N/A                                     ; 161.73 MHz ( period = 6.183 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.935 ns                ;
+; N/A                                     ; 161.73 MHz ( period = 6.183 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.935 ns                ;
+; N/A                                     ; 161.73 MHz ( period = 6.183 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.935 ns                ;
+; N/A                                     ; 161.73 MHz ( period = 6.183 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.935 ns                ;
+; N/A                                     ; 161.89 MHz ( period = 6.177 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[3]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.937 ns                ;
+; N/A                                     ; 161.92 MHz ( period = 6.176 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.936 ns                ;
+; N/A                                     ; 162.28 MHz ( period = 6.162 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[4] ; Processor:HW|dataPath:myDP|ram:RAM|Output[4]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.920 ns                ;
+; N/A                                     ; 163.45 MHz ( period = 6.118 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[9][0]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.879 ns                ;
+; N/A                                     ; 163.45 MHz ( period = 6.118 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[9][5]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.879 ns                ;
+; N/A                                     ; 163.45 MHz ( period = 6.118 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[9][6]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.879 ns                ;
+; N/A                                     ; 163.45 MHz ( period = 6.118 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[9][7]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.879 ns                ;
+; N/A                                     ; 163.45 MHz ( period = 6.118 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[9][4]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.879 ns                ;
+; N/A                                     ; 163.45 MHz ( period = 6.118 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[9][1]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.879 ns                ;
+; N/A                                     ; 163.45 MHz ( period = 6.118 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[9][3]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.879 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.867 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.867 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.867 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.867 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.867 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.867 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.867 ns                ;
+; N/A                                     ; 163.53 MHz ( period = 6.115 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.867 ns                ;
+; N/A                                     ; 163.59 MHz ( period = 6.113 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 163.59 MHz ( period = 6.113 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 163.59 MHz ( period = 6.113 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 163.59 MHz ( period = 6.113 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 163.59 MHz ( period = 6.113 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 163.59 MHz ( period = 6.113 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 163.59 MHz ( period = 6.113 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 163.59 MHz ( period = 6.113 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|register[24][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.865 ns                ;
+; N/A                                     ; 164.31 MHz ( period = 6.086 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[11][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.847 ns                ;
+; N/A                                     ; 164.31 MHz ( period = 6.086 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[11][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.847 ns                ;
+; N/A                                     ; 164.31 MHz ( period = 6.086 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[11][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.847 ns                ;
+; N/A                                     ; 164.31 MHz ( period = 6.086 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[11][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.847 ns                ;
+; N/A                                     ; 164.31 MHz ( period = 6.086 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[11][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.847 ns                ;
+; N/A                                     ; 164.31 MHz ( period = 6.086 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[11][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.847 ns                ;
+; N/A                                     ; 164.31 MHz ( period = 6.086 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[11][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.847 ns                ;
+; N/A                                     ; 164.31 MHz ( period = 6.086 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[11][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.847 ns                ;
+; N/A                                     ; 164.61 MHz ( period = 6.075 ns )                    ; Processor:HW|dataPath:myDP|ram:RAM|register[13][7]       ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.844 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.833 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.833 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.833 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.833 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.833 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.833 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.833 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.833 ns                ;
+; N/A                                     ; 165.10 MHz ( period = 6.057 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[5]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.815 ns                ;
+; N/A                                     ; 165.15 MHz ( period = 6.055 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[0]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.815 ns                ;
+; N/A                                     ; 165.15 MHz ( period = 6.055 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[5]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.813 ns                ;
+; N/A                                     ; 165.21 MHz ( period = 6.053 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[3] ; Processor:HW|dataPath:myDP|ram:RAM|Output[0]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.813 ns                ;
+; N/A                                     ; 165.84 MHz ( period = 6.030 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[9][0]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.791 ns                ;
+; N/A                                     ; 165.84 MHz ( period = 6.030 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[9][5]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.791 ns                ;
+; N/A                                     ; 165.84 MHz ( period = 6.030 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[9][6]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.791 ns                ;
+; N/A                                     ; 165.84 MHz ( period = 6.030 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[9][7]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.791 ns                ;
+; N/A                                     ; 165.84 MHz ( period = 6.030 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[9][4]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.791 ns                ;
+; N/A                                     ; 165.84 MHz ( period = 6.030 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[9][1]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.791 ns                ;
+; N/A                                     ; 165.84 MHz ( period = 6.030 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[9][3]  ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.791 ns                ;
+; N/A                                     ; 166.06 MHz ( period = 6.022 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[29][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.781 ns                ;
+; N/A                                     ; 166.06 MHz ( period = 6.022 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[29][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.781 ns                ;
+; N/A                                     ; 166.06 MHz ( period = 6.022 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[29][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.781 ns                ;
+; N/A                                     ; 166.06 MHz ( period = 6.022 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[29][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.781 ns                ;
+; N/A                                     ; 166.06 MHz ( period = 6.022 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[29][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.781 ns                ;
+; N/A                                     ; 166.06 MHz ( period = 6.022 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[29][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.781 ns                ;
+; N/A                                     ; 166.06 MHz ( period = 6.022 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[29][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.781 ns                ;
+; N/A                                     ; 166.06 MHz ( period = 6.022 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[29][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.781 ns                ;
+; N/A                                     ; 166.09 MHz ( period = 6.021 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|Output[1]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.776 ns                ;
+; N/A                                     ; 166.53 MHz ( period = 6.005 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:IR|Output[1] ; Processor:HW|dataPath:myDP|ram:RAM|Output[2]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.765 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[0] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.764 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[13][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.755 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[0] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.764 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[13][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.755 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[0] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.764 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[13][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.755 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[0] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.764 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[0] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.764 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[13][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.755 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[0] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.764 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[13][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.755 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[13][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.755 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[13][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.755 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[0] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.764 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|controlUnit:myCU|state.decode               ; Processor:HW|dataPath:myDP|ram:RAM|register[13][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.755 ns                ;
+; N/A                                     ; 166.58 MHz ( period = 6.003 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[0] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.764 ns                ;
+; N/A                                     ; 166.67 MHz ( period = 6.000 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|Output[5]       ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.758 ns                ;
+; N/A                                     ; 166.72 MHz ( period = 5.998 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[11][0] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.759 ns                ;
+; N/A                                     ; 166.72 MHz ( period = 5.998 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[11][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.759 ns                ;
+; N/A                                     ; 166.72 MHz ( period = 5.998 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[11][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.759 ns                ;
+; N/A                                     ; 166.72 MHz ( period = 5.998 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[11][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.759 ns                ;
+; N/A                                     ; 166.72 MHz ( period = 5.998 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[11][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.759 ns                ;
+; N/A                                     ; 166.72 MHz ( period = 5.998 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[11][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.759 ns                ;
+; N/A                                     ; 166.72 MHz ( period = 5.998 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[11][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.759 ns                ;
+; N/A                                     ; 166.72 MHz ( period = 5.998 ns )                    ; Processor:HW|controlUnit:myCU|state.store                ; Processor:HW|dataPath:myDP|ram:RAM|register[11][3] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.759 ns                ;
+; N/A                                     ; 166.81 MHz ( period = 5.995 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[21][6] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.754 ns                ;
+; N/A                                     ; 166.81 MHz ( period = 5.995 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[21][5] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.754 ns                ;
+; N/A                                     ; 166.81 MHz ( period = 5.995 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[21][4] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.754 ns                ;
+; N/A                                     ; 166.81 MHz ( period = 5.995 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[21][1] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.754 ns                ;
+; N/A                                     ; 166.81 MHz ( period = 5.995 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[21][7] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.754 ns                ;
+; N/A                                     ; 166.81 MHz ( period = 5.995 ns )                    ; Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2] ; Processor:HW|dataPath:myDP|ram:RAM|register[21][2] ; CLOCK_50   ; CLOCK_50 ; None                        ; None                      ; 5.754 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                          ;                                                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------------------+----------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                                                 ;
++-----------------------------------------+-----------------------------------------------------+------------+--------+----------------------------------------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From   ; To                                                 ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+--------+----------------------------------------------------+----------+
+; N/A                                     ; None                                                ; 4.671 ns   ; KEY[0] ; oneSecClock:myClock|clock                          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 0.899 ns   ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[1][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 0.283 ns   ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[7][4]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 0.210 ns   ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[0][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 0.209 ns   ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[4][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 0.199 ns   ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[10][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 0.016 ns   ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[15][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.012 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[17][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.044 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[12][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.048 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[4][2]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.070 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[8][2]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.072 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[6][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.073 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[31][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.156 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[3][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.169 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|Output[5]       ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.169 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|Output[4]       ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.172 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[17][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.207 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[31][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.230 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[16][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.236 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[6][3]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.238 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[31][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.246 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[4][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.246 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[12][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.274 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[24][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.274 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[24][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.274 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[24][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.274 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[24][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.274 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[24][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.274 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[24][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.274 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[24][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.274 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[24][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.277 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[10][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.278 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[2][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.311 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[0][1]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.328 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[15][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.330 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[0][4]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.338 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|Output[1]       ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.338 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[31][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.392 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[15][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.427 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|Output[6]       ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.438 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[2][4]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.441 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[8][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.444 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[14][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.451 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[11][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.459 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[12][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.496 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[14][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.497 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[5][3]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.498 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[1][3]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.518 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[5][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.526 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[0][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.548 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[21][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.548 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[21][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.548 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[21][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.548 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[21][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.548 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[21][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.548 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[21][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.548 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[21][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.548 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[21][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.550 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[5][0]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.550 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[7][7]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.550 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[5][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.550 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[5][4]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.550 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[5][7]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.550 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[5][2]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.551 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[18][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.551 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[18][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.551 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[18][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.551 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[18][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.551 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[18][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.551 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[2][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.551 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[18][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.551 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[18][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.551 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[18][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.554 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[16][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.559 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[11][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.562 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[9][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.581 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[16][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.585 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[17][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.588 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[7][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.589 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[1][7]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.604 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[11][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.626 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[16][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.632 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[7][2]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.634 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[3][2]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.638 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[10][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.650 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[16][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.650 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[16][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.650 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[16][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.650 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[16][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.662 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[1][2]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.688 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[11][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.688 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[11][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.688 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[11][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.688 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[11][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.688 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[11][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.690 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[13][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.690 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[13][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.690 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[13][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.690 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[13][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.690 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[13][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.690 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[13][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.690 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[9][2]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.690 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[13][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.690 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[13][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.712 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[6][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.712 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[6][7]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.712 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[6][2]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.719 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[9][0]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.719 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[9][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.719 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[9][7]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.719 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[9][4]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.719 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[9][1]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.719 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[9][3]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.722 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[12][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.722 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[12][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.722 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[12][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.722 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[12][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.722 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[12][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.753 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[22][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.753 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[22][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.753 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[22][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.753 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[22][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.753 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[22][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.753 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[22][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.753 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[22][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.753 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[22][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.754 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[0][0]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.766 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[29][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.766 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[29][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.766 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[29][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.766 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[29][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.766 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[29][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.766 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[29][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.766 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[29][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.766 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[29][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.775 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[6][0]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.775 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[6][4]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.775 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[6][1]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.789 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[3][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.811 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[26][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.811 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[26][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.811 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[26][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.811 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[26][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.811 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[26][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.811 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[26][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.811 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[26][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.811 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[26][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.813 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[28][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.813 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[28][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.813 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[28][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.813 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[28][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.813 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[28][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.813 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[28][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.813 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[28][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.813 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[28][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.814 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[8][3]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.843 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[8][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.848 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[0][3]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.868 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[0][7]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.877 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[15][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.880 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[30][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.882 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[4][1]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.882 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[2][3]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.903 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[14][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.905 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[7][0]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.905 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[7][6]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.905 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[7][1]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.905 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[7][3]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.907 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[1][0]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.907 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[1][5]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.907 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[1][4]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.907 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[1][1]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.912 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[3][1]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.926 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[15][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.926 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[10][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.943 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[3][7]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.952 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[17][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.952 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[17][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.952 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[17][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.952 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[17][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -0.952 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[17][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.007 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[31][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.020 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[19][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.020 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[19][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.020 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[19][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.020 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[19][6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.020 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[19][4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.020 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[19][1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.020 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[19][3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.020 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[19][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.029 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[31][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.029 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[31][7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.029 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[31][2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.054 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[10][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.057 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[3][0]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.065 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[3][4]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.065 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[3][3]  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.080 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[23][0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.080 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[23][5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; -1.080 ns  ; SW[8]  ; Processor:HW|dataPath:myDP|ram:RAM|register[23][6] ; CLOCK_50 ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;        ;                                                    ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+--------+----------------------------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                   ;
++-------+--------------+------------+------------------------------------------------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                                                       ; To      ; From Clock ;
++-------+--------------+------------+------------------------------------------------------------+---------+------------+
+; N/A   ; None         ; 15.514 ns  ; Processor:HW|controlUnit:myCU|state.sub                    ; LEDG[1] ; CLOCK_50   ;
+; N/A   ; None         ; 15.386 ns  ; Processor:HW|controlUnit:myCU|state.sub                    ; LEDG[0] ; CLOCK_50   ;
+; N/A   ; None         ; 15.029 ns  ; Processor:HW|controlUnit:myCU|state.jpos                   ; LEDG[2] ; CLOCK_50   ;
+; N/A   ; None         ; 14.395 ns  ; Processor:HW|controlUnit:myCU|state.add                    ; LEDG[1] ; CLOCK_50   ;
+; N/A   ; None         ; 13.788 ns  ; Processor:HW|controlUnit:myCU|state.jpos                   ; LEDG[1] ; CLOCK_50   ;
+; N/A   ; None         ; 13.626 ns  ; Processor:HW|controlUnit:myCU|state.halt                   ; LEDG[1] ; CLOCK_50   ;
+; N/A   ; None         ; 13.608 ns  ; Processor:HW|controlUnit:myCU|state.jz                     ; LEDG[2] ; CLOCK_50   ;
+; N/A   ; None         ; 13.498 ns  ; Processor:HW|controlUnit:myCU|state.halt                   ; LEDG[0] ; CLOCK_50   ;
+; N/A   ; None         ; 13.354 ns  ; Processor:HW|controlUnit:myCU|state.fetch                  ; LEDG[3] ; CLOCK_50   ;
+; N/A   ; None         ; 13.287 ns  ; Processor:HW|controlUnit:myCU|state.halt                   ; LEDG[2] ; CLOCK_50   ;
+; N/A   ; None         ; 13.253 ns  ; Processor:HW|controlUnit:myCU|state.start                  ; LEDG[3] ; CLOCK_50   ;
+; N/A   ; None         ; 13.159 ns  ; Processor:HW|controlUnit:myCU|state.decode                 ; LEDG[1] ; CLOCK_50   ;
+; N/A   ; None         ; 13.072 ns  ; Processor:HW|controlUnit:myCU|state.fetch                  ; LEDG[0] ; CLOCK_50   ;
+; N/A   ; None         ; 13.047 ns  ; Processor:HW|controlUnit:myCU|state.store                  ; LEDG[0] ; CLOCK_50   ;
+; N/A   ; None         ; 12.944 ns  ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[2] ; LEDR[2] ; CLOCK_50   ;
+; N/A   ; None         ; 12.943 ns  ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[1] ; LEDR[1] ; CLOCK_50   ;
+; N/A   ; None         ; 12.907 ns  ; Processor:HW|controlUnit:myCU|state.jz                     ; LEDG[0] ; CLOCK_50   ;
+; N/A   ; None         ; 12.735 ns  ; Processor:HW|controlUnit:myCU|state.manInput               ; LEDG[2] ; CLOCK_50   ;
+; N/A   ; None         ; 12.723 ns  ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[4] ; LEDR[4] ; CLOCK_50   ;
+; N/A   ; None         ; 12.628 ns  ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[6] ; LEDR[6] ; CLOCK_50   ;
+; N/A   ; None         ; 12.619 ns  ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[5] ; LEDR[5] ; CLOCK_50   ;
+; N/A   ; None         ; 12.583 ns  ; Processor:HW|controlUnit:myCU|state.decode                 ; LEDG[3] ; CLOCK_50   ;
+; N/A   ; None         ; 12.580 ns  ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[3] ; LEDR[3] ; CLOCK_50   ;
+; N/A   ; None         ; 12.416 ns  ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[7] ; LEDR[7] ; CLOCK_50   ;
+; N/A   ; None         ; 12.329 ns  ; Processor:HW|controlUnit:myCU|state.halt                   ; LEDR[9] ; CLOCK_50   ;
+; N/A   ; None         ; 12.216 ns  ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[0] ; LEDR[0] ; CLOCK_50   ;
++-------+--------------+------------+------------------------------------------------------------+---------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                                                        ;
++-----------------------------------------+-----------------------------------------------------+-----------+-------+------------------------------------------------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From  ; To                                                         ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+-------+------------------------------------------------------------+----------+
+; N/A                                     ; None                                                ; 3.859 ns  ; SW[4] ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[4] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.857 ns  ; SW[0] ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[0] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.663 ns  ; SW[9] ; Processor:HW|controlUnit:myCU|state.manInput               ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.660 ns  ; SW[9] ; Processor:HW|controlUnit:myCU|state.start                  ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.648 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.622 ns  ; SW[2] ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[2] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.391 ns  ; SW[6] ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[6] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.389 ns  ; SW[7] ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[7] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.323 ns  ; SW[5] ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[5] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.288 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[31][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.268 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[4][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.263 ns  ; SW[3] ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[3] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.259 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[2][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.232 ns  ; SW[1] ; Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[1] ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.172 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[12][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.093 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[17][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.092 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[17][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 3.025 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[11][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.898 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[7][6]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.822 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[6][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.688 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[20][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.688 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[20][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.651 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[12][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.637 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[7][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.510 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[13][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.405 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[9][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.388 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[17][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.354 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[2][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.354 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[2][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.354 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[2][6]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.354 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[2][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.354 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[2][2]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.354 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[2][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.354 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[2][3]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.343 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[30][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.342 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[30][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.340 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[30][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.306 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[4][3]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.255 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[13][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.250 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[11][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.227 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[14][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.192 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[13][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.189 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[30][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.137 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[8][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.119 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[8][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.118 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[14][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.117 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[20][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.117 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[20][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.117 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[20][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.117 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[20][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.117 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[20][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.117 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[20][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.108 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[6][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.105 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[1][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.104 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[5][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.038 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[4][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.038 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[4][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.038 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[4][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.038 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[4][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.038 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[4][2]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.031 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[14][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 2.010 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[8][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.995 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[30][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.995 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[30][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.995 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[30][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.995 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[30][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.983 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[14][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.983 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[14][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.983 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[14][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.983 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[14][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.983 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[14][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.939 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[25][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.929 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|Output[0]               ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.929 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|Output[7]               ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.929 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|Output[2]               ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.929 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|Output[3]               ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.913 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[9][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.840 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[7][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.832 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[31][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.828 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[5][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.795 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[13][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.783 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[12][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.773 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[1][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.770 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[6][2]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.770 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[0][2]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.745 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[9][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.744 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[5][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.724 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[15][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.665 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[7][3]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.663 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[3][3]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.662 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[9][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.662 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.659 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[17][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.650 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[4][6]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.606 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[3][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.603 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[13][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.580 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[8][6]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.580 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[9][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.577 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[1][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.575 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[5][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.536 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[0][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.536 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[0][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.536 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[0][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.536 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[0][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.536 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[0][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.536 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[0][3]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.502 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[12][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.465 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[31][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.465 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[6][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.456 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[1][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.448 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[25][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.448 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[25][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.448 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[25][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.448 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[25][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.448 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[25][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.448 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[25][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.448 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[25][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.436 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[3][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.425 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[8][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.402 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[16][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.391 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.391 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[1][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.387 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[9][3]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.384 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.384 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.384 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.384 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.384 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[10][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.360 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[16][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.357 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[5][0]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.342 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[15][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.341 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[27][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.341 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[27][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.341 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[27][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.341 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[27][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.341 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[27][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.341 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[27][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.341 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[27][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.341 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[27][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.340 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[15][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.338 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[13][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.334 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[8][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.334 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[8][2]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.334 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[8][3]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.332 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[15][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.332 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[15][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.332 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[15][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.332 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[15][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.332 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[15][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.328 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[23][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.328 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[23][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.328 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[23][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.328 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[23][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.328 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[23][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.328 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[23][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.328 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[23][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.328 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[23][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.313 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[3][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.313 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[3][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.313 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[3][6]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.313 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[3][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.313 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[3][2]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.288 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[13][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.277 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[31][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.277 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[31][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.277 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[31][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.277 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[31][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.277 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[31][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.270 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[17][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.268 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[19][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.268 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[19][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.268 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[19][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.268 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[19][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.268 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[19][4]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.268 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[19][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.268 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[19][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.268 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[19][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.254 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[6][1]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.238 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[9][2]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.232 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[5][2]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.222 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[13][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.205 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[11][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.200 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[17][6]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.200 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[17][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.200 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[17][2]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.155 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[1][6]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.155 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[1][3]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.153 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[7][5]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.153 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[7][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.153 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[7][4]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.153 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[7][2]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.131 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[12][1]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.126 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[11][3]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.118 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[6][7]          ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.105 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[16][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.087 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[11][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.061 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[28][0]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.061 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[28][5]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.061 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[28][7]         ; CLOCK_50 ;
+; N/A                                     ; None                                                ; 1.061 ns  ; SW[8] ; Processor:HW|dataPath:myDP|ram:RAM|register[28][6]         ; CLOCK_50 ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;       ;                                                            ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+-------+------------------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Mon Dec 21 12:33:58 2015
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off ProcessorHW -c ProcessorHW --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLOCK_50" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "oneSecClock:myClock|clock" as buffer
+Info: Clock "CLOCK_50" has Internal fmax of 141.46 MHz between source register "Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2]" and destination register "Processor:HW|dataPath:myDP|ram:RAM|Output[0]" (period= 7.069 ns)
+    Info: + Longest register to register delay is 6.829 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X36_Y13_N5; Fanout = 3; REG Node = 'Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2]'
+        Info: 2: + IC(0.587 ns) + CELL(0.521 ns) = 1.108 ns; Loc. = LCCOMB_X37_Y13_N6; Fanout = 79; COMB Node = 'Processor:HW|dataPath:myDP|dp1:DP1|Address[2]~1'
+        Info: 3: + IC(1.890 ns) + CELL(0.178 ns) = 3.176 ns; Loc. = LCCOMB_X38_Y13_N2; Fanout = 1; COMB Node = 'Processor:HW|dataPath:myDP|ram:RAM|Mux7~4'
+        Info: 4: + IC(1.437 ns) + CELL(0.178 ns) = 4.791 ns; Loc. = LCCOMB_X35_Y14_N16; Fanout = 1; COMB Node = 'Processor:HW|dataPath:myDP|ram:RAM|Mux7~5'
+        Info: 5: + IC(0.320 ns) + CELL(0.544 ns) = 5.655 ns; Loc. = LCCOMB_X35_Y14_N2; Fanout = 1; COMB Node = 'Processor:HW|dataPath:myDP|ram:RAM|Mux7~6'
+        Info: 6: + IC(0.284 ns) + CELL(0.178 ns) = 6.117 ns; Loc. = LCCOMB_X35_Y14_N4; Fanout = 1; COMB Node = 'Processor:HW|dataPath:myDP|ram:RAM|Mux7~9'
+        Info: 7: + IC(0.297 ns) + CELL(0.319 ns) = 6.733 ns; Loc. = LCCOMB_X35_Y14_N8; Fanout = 1; COMB Node = 'Processor:HW|dataPath:myDP|ram:RAM|Mux7~20'
+        Info: 8: + IC(0.000 ns) + CELL(0.096 ns) = 6.829 ns; Loc. = LCFF_X35_Y14_N9; Fanout = 3; REG Node = 'Processor:HW|dataPath:myDP|ram:RAM|Output[0]'
+        Info: Total cell delay = 2.014 ns ( 29.49 % )
+        Info: Total interconnect delay = 4.815 ns ( 70.51 % )
+    Info: - Smallest clock skew is -0.001 ns
+        Info: + Shortest clock path from clock "CLOCK_50" to destination register is 6.777 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 2; CLK Node = 'CLOCK_50'
+            Info: 2: + IC(1.643 ns) + CELL(0.879 ns) = 3.548 ns; Loc. = LCFF_X27_Y12_N21; Fanout = 2; REG Node = 'oneSecClock:myClock|clock'
+            Info: 3: + IC(1.644 ns) + CELL(0.000 ns) = 5.192 ns; Loc. = CLKCTRL_G12; Fanout = 296; COMB Node = 'oneSecClock:myClock|clock~clkctrl'
+            Info: 4: + IC(0.983 ns) + CELL(0.602 ns) = 6.777 ns; Loc. = LCFF_X35_Y14_N9; Fanout = 3; REG Node = 'Processor:HW|dataPath:myDP|ram:RAM|Output[0]'
+            Info: Total cell delay = 2.507 ns ( 36.99 % )
+            Info: Total interconnect delay = 4.270 ns ( 63.01 % )
+        Info: - Longest clock path from clock "CLOCK_50" to source register is 6.778 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 2; CLK Node = 'CLOCK_50'
+            Info: 2: + IC(1.643 ns) + CELL(0.879 ns) = 3.548 ns; Loc. = LCFF_X27_Y12_N21; Fanout = 2; REG Node = 'oneSecClock:myClock|clock'
+            Info: 3: + IC(1.644 ns) + CELL(0.000 ns) = 5.192 ns; Loc. = CLKCTRL_G12; Fanout = 296; COMB Node = 'oneSecClock:myClock|clock~clkctrl'
+            Info: 4: + IC(0.984 ns) + CELL(0.602 ns) = 6.778 ns; Loc. = LCFF_X36_Y13_N5; Fanout = 3; REG Node = 'Processor:HW|dataPath:myDP|dp1:DP1|register:PC|Output[2]'
+            Info: Total cell delay = 2.507 ns ( 36.99 % )
+            Info: Total interconnect delay = 4.271 ns ( 63.01 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Info: tsu for register "oneSecClock:myClock|clock" (data pin = "KEY[0]", clock pin = "CLOCK_50") is 4.671 ns
+    Info: + Longest pin to register delay is 7.980 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.864 ns) = 0.864 ns; Loc. = PIN_R22; Fanout = 58; PIN Node = 'KEY[0]'
+        Info: 2: + IC(6.499 ns) + CELL(0.521 ns) = 7.884 ns; Loc. = LCCOMB_X27_Y12_N20; Fanout = 1; COMB Node = 'oneSecClock:myClock|clock~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 7.980 ns; Loc. = LCFF_X27_Y12_N21; Fanout = 2; REG Node = 'oneSecClock:myClock|clock'
+        Info: Total cell delay = 1.481 ns ( 18.56 % )
+        Info: Total interconnect delay = 6.499 ns ( 81.44 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "CLOCK_50" to destination register is 3.271 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 2; CLK Node = 'CLOCK_50'
+        Info: 2: + IC(1.643 ns) + CELL(0.602 ns) = 3.271 ns; Loc. = LCFF_X27_Y12_N21; Fanout = 2; REG Node = 'oneSecClock:myClock|clock'
+        Info: Total cell delay = 1.628 ns ( 49.77 % )
+        Info: Total interconnect delay = 1.643 ns ( 50.23 % )
+Info: tco from clock "CLOCK_50" to destination pin "LEDG[1]" through register "Processor:HW|controlUnit:myCU|state.sub" is 15.514 ns
+    Info: + Longest clock path from clock "CLOCK_50" to source register is 6.778 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 2; CLK Node = 'CLOCK_50'
+        Info: 2: + IC(1.643 ns) + CELL(0.879 ns) = 3.548 ns; Loc. = LCFF_X27_Y12_N21; Fanout = 2; REG Node = 'oneSecClock:myClock|clock'
+        Info: 3: + IC(1.644 ns) + CELL(0.000 ns) = 5.192 ns; Loc. = CLKCTRL_G12; Fanout = 296; COMB Node = 'oneSecClock:myClock|clock~clkctrl'
+        Info: 4: + IC(0.984 ns) + CELL(0.602 ns) = 6.778 ns; Loc. = LCFF_X37_Y13_N13; Fanout = 11; REG Node = 'Processor:HW|controlUnit:myCU|state.sub'
+        Info: Total cell delay = 2.507 ns ( 36.99 % )
+        Info: Total interconnect delay = 4.271 ns ( 63.01 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 8.459 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X37_Y13_N13; Fanout = 11; REG Node = 'Processor:HW|controlUnit:myCU|state.sub'
+        Info: 2: + IC(1.965 ns) + CELL(0.461 ns) = 2.426 ns; Loc. = LCCOMB_X36_Y13_N30; Fanout = 2; COMB Node = 'Processor:HW|controlUnit:myCU|WideOr2~0'
+        Info: 3: + IC(0.297 ns) + CELL(0.521 ns) = 3.244 ns; Loc. = LCCOMB_X36_Y13_N26; Fanout = 1; COMB Node = 'Processor:HW|controlUnit:myCU|WideOr2'
+        Info: 4: + IC(2.365 ns) + CELL(2.850 ns) = 8.459 ns; Loc. = PIN_U21; Fanout = 0; PIN Node = 'LEDG[1]'
+        Info: Total cell delay = 3.832 ns ( 45.30 % )
+        Info: Total interconnect delay = 4.627 ns ( 54.70 % )
+Info: th for register "Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[4]" (data pin = "SW[4]", clock pin = "CLOCK_50") is 3.859 ns
+    Info: + Longest clock path from clock "CLOCK_50" to destination register is 6.777 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 2; CLK Node = 'CLOCK_50'
+        Info: 2: + IC(1.643 ns) + CELL(0.879 ns) = 3.548 ns; Loc. = LCFF_X27_Y12_N21; Fanout = 2; REG Node = 'oneSecClock:myClock|clock'
+        Info: 3: + IC(1.644 ns) + CELL(0.000 ns) = 5.192 ns; Loc. = CLKCTRL_G12; Fanout = 296; COMB Node = 'oneSecClock:myClock|clock~clkctrl'
+        Info: 4: + IC(0.983 ns) + CELL(0.602 ns) = 6.777 ns; Loc. = LCFF_X35_Y13_N9; Fanout = 18; REG Node = 'Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[4]'
+        Info: Total cell delay = 2.507 ns ( 36.99 % )
+        Info: Total interconnect delay = 4.270 ns ( 63.01 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 3.204 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_W12; Fanout = 1; PIN Node = 'SW[4]'
+        Info: 2: + IC(1.558 ns) + CELL(0.544 ns) = 3.108 ns; Loc. = LCCOMB_X35_Y13_N8; Fanout = 1; COMB Node = 'Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[4]~4'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 3.204 ns; Loc. = LCFF_X35_Y13_N9; Fanout = 18; REG Node = 'Processor:HW|dataPath:myDP|dp3:DP3|register:regA|Output[4]'
+        Info: Total cell delay = 1.646 ns ( 51.37 % )
+        Info: Total interconnect delay = 1.558 ns ( 48.63 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 160 megabytes
+    Info: Processing ended: Mon Dec 21 12:33:58 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

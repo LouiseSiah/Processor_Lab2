@@ -93,7 +93,7 @@ endtask
 task checkingOutput;
 input [7:0] expectedValue;
 begin
-  //$display("CP4");
+  $display("CP4");
   while(!Halt) #1;
 
     if(expectedValue != Moutput)
