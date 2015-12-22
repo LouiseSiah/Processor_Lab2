@@ -31,13 +31,13 @@ begin
   clock = 0;
   forever #1 clock = ~clock;
 end
-
+/*
 initial
 begin
   $display("clk | reset | Enter | cheat | Minput | Halt| Moutput| State| IR75");
   $monitor("%b   | %b     | %b     |  %b   |    %d  |  %b  |   %d   | %b | %b ", clock, reset, Enter, cheat, Minput, Halt, Moutput, DisplayState, IR75);
 end
-
+*/
 initial
 begin
   initialise();
@@ -102,7 +102,7 @@ begin
       $display(" !!!!!! ERROR !!!!!!  expected output = %d, actual output = %d", expectedValue, Moutput);
     end
     else
-      $display("***************************** PASS with %d time *************************************", (i + 1));
+      $display("output = %d \n************************* PASS with %d time *************************************", Moutput, ((i + 1) - error));
 
 end
 endtask
